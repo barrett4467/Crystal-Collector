@@ -1,14 +1,27 @@
 // global vars
-var targetScore = Math.floor(Math.random() * 50);
+var targetScore = Math.floor(Math.random() * (200 - 50) + 50);
 var roundScore = 0;
 var wins = 0;
 var losses = 0;
 var counter = 0;
 var clicks = 0; 
 
-var crystalValue = Math.floor(Math.random() * 10);
+var crystalValue = Math.floor(Math.random() * (10 - 1) + 1) + 1;
 
-// function startGame(){}
+function startGame(){
+    var roundScore = crystalValue * clicks;
+        alert("Next Round!!");
+        $("#total-score").text("Your Total Score: " + 0);
+        crystalValue = Math.floor(Math.random() * (10 - 1) + 1) + 1;
+
+        targetScore = Math.floor(Math.random() * (200 - 50) + 50);
+
+        $("#target-score").text("Your Target is: " + targetScore);
+        clicks = 0;
+        roundScore = 0;
+    }
+    
+
 
 
 $("#crystals").on("click", function(){
@@ -30,9 +43,15 @@ console.log(clicks);
     
     if (roundScore === targetScore) {
         alert("You win!");
-    } else if (roundScore > targetScore) {
-            alert("You lose!!");
-            return 
+        wins++
+        startGame();
+        $("#wins").text("Wins: " + wins)
+    } else if (roundScore >= targetScore) {
+        alert("You lose!!");
+        losses++
+        $("#losses").text("Losses: " + losses)
+        startGame();
+        console.log(losses);
     }
 })
 
