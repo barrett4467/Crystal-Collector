@@ -8,8 +8,10 @@ var clicks = 0;
 
 var crystalValue = Math.floor(Math.random() * (10 - 1) + 1) + 1;
 
-function startGame(){
+function gameReset(){
     var roundScore = crystalValue * clicks;
+
+    $("#crystal-image1").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
         alert("Next Round!!");
         $("#total-score").text("Your Total Score: " + 0);
         crystalValue = Math.floor(Math.random() * (10 - 1) + 1) + 1;
@@ -25,15 +27,15 @@ function startGame(){
 
 
 $("#crystals").on("click", function(){
-        console.log("button clicked");
+    console.log("button clicked");
         //need something to track the amount of clicks 
         clicks++
-console.log(clicks);
+    console.log(clicks);
 
         var imageCrystal = $(".crystal-image");
     
         imageCrystal.attr("value" , crystalValue); //sets to random value    
-        console.log(crystalValue);
+    console.log(crystalValue);
 
         var roundScore = crystalValue * clicks ;
 
@@ -44,16 +46,17 @@ console.log(clicks);
     if (roundScore === targetScore) {
         alert("You win!");
         wins++
-        startGame();
+        gameReset();
         $("#wins").text("Wins: " + wins)
     } else if (roundScore >= targetScore) {
         alert("You lose!!");
         losses++
         $("#losses").text("Losses: " + losses)
-        startGame();
-        console.log(losses);
+        gameReset();
+    console.log(losses);
     }
 })
+
 
 
 
@@ -62,6 +65,10 @@ console.log(clicks);
     // imageCrystal.attr("data-crystalvalue", Math.floor(Math.random() * 4));
 
     $("#crystal").text("Crystals Go Here");
+    $("#crystal-image1").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
+    $("#crystal-image2").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
+    $("#crystal-image3").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
+    $("#crystal-image4").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
     $("#target-score").text("Your Target is: " + targetScore);
     $("#total-score").text("Your Total Score: " + roundScore);
     $("#wins").text("Wins: " + wins);
