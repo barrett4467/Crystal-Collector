@@ -3,10 +3,10 @@ var targetScore = " ";
 var roundScore = " ";
 var wins = " ";
 var losses = " ";
-var crystals = [
-"crystal1", value]
+// var crystals = [
+// "crystal1", value]
 
-var crystalImages = ["assets/images/crystal-red", "assets/images/crystal-blue"];
+var crystalImages = ["images/crystalRed.png,",];
 
 for (var i = 0; i < 4; i++){
     // create crystal image 
@@ -15,9 +15,33 @@ for (var i = 0; i < 4; i++){
     //add same class to each
     imageCrystal.addClass("crystal-image");
 
-    //add src link 
+    //add src link (gives us random images)
+    imageCrystal.attr("src", crystalImages[Math.floor(Math.random() * crystalImages.length)]);
 
+    //sets value and gives it a random #
+    imageCrystal.attr("data-crystalvalue", Math.floor(Math.random() * 3));
+
+    $("#crystals").append(imageCrystal);
 }
+
+
+
+$(".crystal-image").on("click", function(){
+    var crystalValue = ($(this).attr("data-crystalvalue"));
+    crystalValue = parseInt(crystalValue);
+
+    //adds to counter each click
+    counter += crystalValue;
+
+    alert("New score: " + counter);
+
+    if (counter === targetNumber) {
+        alert("You win!");
+    } else if (counter > targetNumber) {
+        alert("You lose!!");
+    }
+
+})
 
 $("#target-score").text(targetScore);
 var counter = 0;
@@ -33,10 +57,10 @@ var counter = 0;
 
 
 
-crystals
-target-score
-wins
-losses
+// crystals
+// target-score
+// wins
+// losses
 
 
 
