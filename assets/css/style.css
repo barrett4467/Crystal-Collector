@@ -4,7 +4,7 @@
     background-color: orange;
 }
 
-#crystal-image1 {
+.crystal-image, .red {
     height: 100px;
     width: 100px;
 }
