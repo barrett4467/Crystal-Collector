@@ -1,47 +1,54 @@
-// global vars
-var targetScore = Math.floor(Math.random() * (200 - 50) + 50);
+// global vars 
+var targetScore = Math.floor(Math.random() * (120 - 19) + 19);
 var roundScore = 0;
 var wins = 0;
 var losses = 0;
 var counter = 0;
 var clicks = 0; 
 
-var crystalValue = Math.floor(Math.random() * (10 - 1) + 1) + 1;
+var crystalValue = Math.floor(Math.random() * (12 - 1) + 1);
+
 
 function gameReset(){
     var roundScore = crystalValue * clicks;
-
-    $("#crystal-image1").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
-        alert("Next Round!!");
-        $("#total-score").text("Your Total Score: " + 0);
-        crystalValue = Math.floor(Math.random() * (10 - 1) + 1) + 1;
-
-        targetScore = Math.floor(Math.random() * (200 - 50) + 50);
-
-        $("#target-score").text("Your Target is: " + targetScore);
-        clicks = 0;
-        roundScore = 0;
-    }
     
+    $("#crystal-image").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
+    alert("Next Round!!");
+    $("#total-score").text("Your Total Score: " + 0);
+    crystalValue = Math.floor(Math.random() * (10 - 1) + 1) + 1;
+    
+    targetScore = Math.floor(Math.random() * (200 - 50) + 50);
+    
+    $("#target-score").text("Your Target is: " + targetScore);
+    clicks = 0;
+    roundScore = 0;
+}
+
+$(document).ready(function(){
+    for (i = 0; i < 5; i++){
+        $("#crystal-image").attr("value", "crystalValue");
+    }
+}) 
 
 
 
 $("#crystals").on("click", function(){
+    console.log(this);
     console.log("button clicked");
         //need something to track the amount of clicks 
         clicks++
-    console.log(clicks);
+    console.log("Clicks: " + clicks);
 
         var imageCrystal = $(".crystal-image");
     
         imageCrystal.attr("value" , crystalValue); //sets to random value    
-    console.log(crystalValue);
+    console.log("Crystal Value: " + crystalValue);
 
         var roundScore = crystalValue * clicks ;
 
         $("#total-score").text("Your Total Score: " + roundScore);
 
-    console.log(roundScore);
+    console.log("Round Score: " + roundScore);
     
     if (roundScore === targetScore) {
         alert("You win!");
@@ -53,7 +60,7 @@ $("#crystals").on("click", function(){
         losses++
         $("#losses").text("Losses: " + losses)
         gameReset();
-    console.log(losses);
+    console.log("Losses: " + losses);
     }
 })
 
@@ -65,28 +72,14 @@ $("#crystals").on("click", function(){
     // imageCrystal.attr("data-crystalvalue", Math.floor(Math.random() * 4));
 
     $("#crystal").text("Crystals Go Here");
-    $("#crystal-image1").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
-    $("#crystal-image2").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
-    $("#crystal-image3").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
-    $("#crystal-image4").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
+    $("#crystal-image").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
+    $("#crystal-image-red").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
+    $("#crystal-image").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
+    $("#crystal-image").html("<img src='./assets/images/crystalBlue.png' alt='Blue Crystal'/>");
     $("#target-score").text("Your Target is: " + targetScore);
     $("#total-score").text("Your Total Score: " + roundScore);
     $("#wins").text("Wins: " + wins);
     $("#losses").text("Losses: " + losses);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
