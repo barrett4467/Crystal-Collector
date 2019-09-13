@@ -86,6 +86,8 @@ $("#image0").on("click", function(){
 
     roundScore = value0 + value1 + value2 + value3;
     console.log(roundScore)
+    $("#total-score").text("Your Total Score: " + roundScore);
+
     scoreChecker();
 })
 $("#image1").on("click", function(){
@@ -102,6 +104,7 @@ $("#image1").on("click", function(){
 
     roundScore = value0 + value1 + value2 + value3;
     console.log(roundScore)
+    $("#total-score").text("Your Total Score: " + roundScore);
 
     scoreChecker();
 })
@@ -119,6 +122,7 @@ $("#image2").on("click", function(){
 
     roundScore = value0 + value1 + value2 + value3;
     console.log(roundScore)
+    $("#total-score").text("Your Total Score: " + roundScore);
 
     scoreChecker();
 })
@@ -135,13 +139,13 @@ $("#image3").on("click", function(){
 
     roundScore = value0 + value1 + value2 + value3;
     console.log(roundScore)
+    $("#total-score").text("Your Total Score: " + roundScore);
 
     scoreChecker();
 })
 
-$("#total-score").text("Total Score: " + roundScore)
+$("#total-score").text("Your Total Score: "  + roundScore)
 $("#target-score").text("Your Target is: " + targetScore);
-// $("#total-score").text("Your Total Score: " + roundScore);
 $("#wins").text("Wins: " + wins);
 $("#losses").text("Losses: " + losses);
 

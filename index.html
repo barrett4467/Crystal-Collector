@@ -4,35 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Crystal Collector</title>
+
     <!-- CSS link -->
-    <link href="assets/css/style.css" rel="stylesheet" type="css/text">
-    <!-- jQuery link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="assets/css/skeleton.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+
+    <!--Font Links-->
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt|Josefin+Sans|Noto+Serif+KR&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-    <div>
-        <h1>Crystals Collector</h1>
-        <p id="directions">You will be given a random number at the start of the game.</p>
-        <p id="directions">There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-        <p id="directions">You win the game by matching your total score to the score goal. But be careful, guesses too high will cause you to lose</p>
-        <p id="directions">The value of each crystal will not be apparent at the beginning. But by keeping a close eye on the score, you're sure to determine the value of each.</p>
-        <p id="directions">Each time the game starts, the value of each crystal will change.</p>
+    <div class="background">
+        <div class= "container">
+            <h1>Crystals Collector</h1>
+        <p id="directions"><span class="first-character">Y</span>ou will be given a random number at the start of the game. There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score. You win the game by matching your total score to the score goal. But be careful, guesses too high will cause you to lose</p>
+        <p id="directions">The value of each crystal will not be apparent at the beginning. But by keeping a close eye on the score, you're sure to determine the value of each. Each time the game starts, the value of each crystal will change.</p>
     </div>
-        <div>
-            <h2 id="target-score"></h2>
-            <h2 id="total-score"></h2>
-            <h2 id="wins"></h2>
-            <h2 id="losses"></h2>
+    <div class= "container">
+        <div class="row">
+            <div class="one-half column">
+                <h2 id="target-score"></h2>
+                <h2 id="total-score"></h2>
+                <h2 id="wins"></h2>
+                <h2 id="losses"></h2>
+            </div>
+            <div class="one-half column">
+                <div id= "crystals"></div>
+            </div>
         </div>
-        <div id= "crystals"></div>
-
-      
-
-
+    </div>
+</div>
+    
+    
+    
+    
+    <!-- jQuery link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--JavaScript-->
-<script type= "text/javascript" src="assets/javascript/game.js"></script>
-
+    <script type= "text/javascript" src="assets/javascript/game.js"></script>
+    
     
 </body>
 </html>
