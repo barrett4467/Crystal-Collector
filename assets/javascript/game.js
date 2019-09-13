@@ -12,7 +12,7 @@ var value1 = 0;
 var value2 = 0; 
 var value3 = 0; 
 
-var crystalImages = ["./assets/images/crystalBlue.png", "./assets/images/crystalRed.png", "./assets/images/crystalBlue.png", "./assets/images/crystalRed.png"];
+var crystalImages = ["./assets/images/crystalBlue.png", "./assets/images/crystalRed.png", "./assets/images/crystalOrange.png", "./assets/images/crystalGreen.png"];
 
 for (var i = 0; i < 4; i++) {
 
