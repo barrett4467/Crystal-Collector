@@ -1,14 +1,14 @@
 // global vars 
 var targetScore = Math.floor(Math.random() * (120 - 19) + 19);
-var roundScore = 0;
+// var roundScore = 0;
 var wins = 0;
 var losses = 0;
 var counter = 0;
 var clicks = 0; 
 
-var crystalValue = Math.floor(Math.random() * 13 + 1)
-
-var crystalImages = ["./assets/images/crystalBlue.png", "./assets/images/crystalBlue.png"];
+var crystalValue = 0;
+var worth = [];
+var crystalImages = ["./assets/images/crystalBlue.png", "./assets/images/crystalRed.png"];
 
 for (var i = 0; i < 4; i++) {
 
@@ -21,13 +21,11 @@ for (var i = 0; i < 4; i++) {
 
     // This data attribute will be ****set equal to the array value.***
     imageCrystal.attr("data-value", Math.floor(Math.random() * 13 + 1));
-
+    
     $("#crystals").append(imageCrystal); //adds to page 
   }
 
-  function startGame(){
-      $("#crystal-image").attr("data-value", Math.floor(Math.random() * 13 + 1));
-  }
+
 
 
 
@@ -50,9 +48,7 @@ function gameReset(){
     startGame()
 }
 
-$(document).ready(function() {
-    startGame()
-})
+
 
 
 
@@ -61,45 +57,41 @@ $("#crystals").on("click", ".crystal-image", function(){
 
     value = parseInt(value); //changing from string to #
 
-    console.log(value);
+    worth.push(value);
+
+    console.log("Worth: " + worth)
+    console.log("CrystalValue: " + value);
+
         //need something to track the amount of clicks 
         clicks++
     console.log("Clicks: " + clicks);
 
         var imageCrystal = $(".crystal-image");
-    
-    console.log("Crystal Value: " + crystalValue);
+        // ((crystalValue[0] * clicks) + (crystalValue[1] * clicks) + (crystalValue[2] * clicks) + (crystalValue[3] * clicks));
 
-    var crystal1Value = value * clicks;
-    var crystal2Value = value * clicks;
-    var crystal3Value = value * clicks;
-    var crystal4Value = value * clicks;
+        // $("#total-score").text("Your Total Score: " + roundScore);
 
-        // var roundScore = crystal1Value + crystal2Value + crystal3Value+ crystal4Value
-
-        $("#total-score").text("Your Total Score: " + roundScore);
-
-    console.log("Round Score: " + roundScore);
+    // console.log("Round Score: " + roundScore);
 
 
     
-    if (roundScore === targetScore) {
-        alert("You win!");
-        wins++
-        gameReset();
-        $("#wins").text("Wins: " + wins)
-    } else if (roundScore >= targetScore) {
-        alert("You lose!!");
-        losses++
-        $("#losses").text("Losses: " + losses)
-        gameReset();
-    console.log("Losses: " + losses);
-    }
+    // if (roundScore === targetScore) {
+    //     alert("You win!");
+    //     wins++
+    //     gameReset();
+    //     $("#wins").text("Wins: " + wins)
+    // } else if (roundScore >= targetScore) {
+    //     alert("You lose!!");
+    //     losses++
+    //     $("#losses").text("Losses: " + losses)
+    //     gameReset();
+    // console.log("Losses: " + losses);
+    // }
 })
 
 
     $("#target-score").text("Your Target is: " + targetScore);
-    $("#total-score").text("Your Total Score: " + roundScore);
+    // $("#total-score").text("Your Total Score: " + roundScore);
     $("#wins").text("Wins: " + wins);
     $("#losses").text("Losses: " + losses);
 
