@@ -10,3 +10,5 @@
 ## The value of each crystal will not be apparent at the beginning. But by keeping a close eye on the score, you're sure to determine the value of each.
 
 ## Each time the game starts, the value of each crystal will change. Best of luck!!
+
+##
