@@ -7,7 +7,7 @@
 
 You can view the game at: https://barrett4467.github.io/Crystal-Collector/
 
-Technologies: 
+## Technologies: 
     HTML
     CSS
     jQuery
